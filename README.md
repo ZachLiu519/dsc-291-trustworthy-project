@@ -195,6 +195,31 @@ To test whether repeated private API judge calls are stable across times of day,
 
 The raw repeated scored CSVs are not committed; they can be regenerated from the saved response files with `scripts/score_openai_judge.py`.
 
+For cron or scheduled Colab runs, use the cron-friendly wrapper:
+
+```bash
+PYTHON_BIN=/content/.venv311/bin/python \
+bash scripts/run_openai_judge_sensitivity_once.sh
+```
+
+Each invocation writes timestamped outputs under `outputs/api_judge_sensitivity/<timestamp>/` and a log under `logs/api_judge_sensitivity/`.
+
+To install repeated cron entries for a live Colab VM or Linux host, run:
+
+```bash
+PYTHON_BIN=/content/.venv311/bin/python \
+bash scripts/install_openai_judge_sensitivity_cron.sh
+```
+
+By default, the installer schedules morning, afternoon, evening, and overnight UTC runs. To customize times, pass quoted cron schedules as arguments, for example:
+
+```bash
+PYTHON_BIN=/content/.venv311/bin/python \
+bash scripts/install_openai_judge_sensitivity_cron.sh \
+  "30 7 * * *" \
+  "30 15 * * *"
+```
+
 ### Step 3 — Vicuna-13B benign behaviors
 
 ```bash
