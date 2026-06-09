@@ -1,0 +1,22 @@
+experiment_name: vicuna_benign_vllm_jbb_subset
+model:
+  model_name: lmsys/vicuna-13b-v1.5
+  artifact_model_name: vicuna-13b-v1.5
+  dtype: half
+  tensor_parallel_size: 1
+  gpu_memory_utilization: 0.92
+  quantization:
+  trust_remote_code: false
+dataset:
+  split: benign
+  sample_size: 30
+  seed: 291
+artifacts:
+  methods:
+    - BENIGN
+generation:
+  max_new_tokens: 256
+  temperature: 0.0
+  top_p: 1.0
+  batch_size: 4
+output_dir: outputs/vicuna_benign_vllm_jbb_subset

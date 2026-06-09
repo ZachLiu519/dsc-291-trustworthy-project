@@ -1,0 +1,2 @@
+method,model_name,defense,n,attack_success_rate
+BENIGN,lmsys/vicuna-13b-v1.5,none,30,1.0

@@ -1,0 +1,23 @@
+experiment_name: vicuna7b_vllm_jbb_subset
+model:
+  model_name: lmsys/vicuna-7b-v1.5
+  artifact_model_name: vicuna-13b-v1.5
+  dtype: half
+  tensor_parallel_size: 1
+  gpu_memory_utilization: 0.9
+  quantization:
+  trust_remote_code: false
+dataset:
+  split: harmful
+  sample_size: 30
+  seed: 291
+artifacts:
+  methods:
+    - PAIR
+    - GCG
+generation:
+  max_new_tokens: 256
+  temperature: 0.0
+  top_p: 1.0
+  batch_size: 4
+output_dir: outputs/vicuna7b_vllm_jbb_subset

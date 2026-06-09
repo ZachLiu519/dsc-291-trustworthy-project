@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dsc291-jailbreakbench-repro"
+version = "0.1.0"
+description = "Reproduction scripts for the DSC 291 JailbreakBench course project."
+requires-python = ">=3.10,<3.12"
+dependencies = [
+    "jailbreakbench>=1.0.0",
+    "litellm>=1.20.0,<1.30.0",
+    "pandas>=2.2.0",
+    "pyyaml>=6.0.0",
+    "transformers>=4.38.0,<4.39.0",
+    "wordfreq>=3.1.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0", "matplotlib>=3.8.0"]
+vllm = ["jailbreakbench[vllm]>=1.0.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

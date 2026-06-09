@@ -1,0 +1,3 @@
+method,model_name,defense,n,attack_success_rate
+GCG,lmsys/vicuna-13b-v1.5,dictionary_filter,29,0.20689655172413793
+PAIR,lmsys/vicuna-13b-v1.5,dictionary_filter,25,0.6

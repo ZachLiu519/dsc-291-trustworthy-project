@@ -1,0 +1,17 @@
+.cursor/
+chat_history/
+conversation_export*.md
+.venv*/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.egg-info/
+.env
+.env.*
+hf_cache/
+*.tar.gz
+outputs/**
+!outputs/.gitkeep
+!outputs/**/
+!outputs/**/asr_summary*.csv
+!outputs/**/refusal_summary.csv
